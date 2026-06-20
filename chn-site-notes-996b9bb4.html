@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>再次遇见 · hth 笔记</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fafaf9;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #1c1b1a;
+            line-height: 1.75;
+            padding: 1.5rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 42rem;
+            width: 100%;
+            margin: 3rem auto;
+        }
+
+        /* 开场 — 简短、安静 */
+        .opening {
+            margin-bottom: 2.8rem;
+            font-size: 1.25rem;
+            letter-spacing: -0.01em;
+            color: #2f2e2c;
+            border-left: 3px solid #c0a78b;
+            padding-left: 1.2rem;
+        }
+
+        .opening p {
+            font-weight: 380;
+        }
+
+        /* 承接段落 — 再次访问 / 收藏的日常 */
+        .continuation {
+            margin-bottom: 2.8rem;
+            background: #ffffff;
+            padding: 1.8rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px -12px rgba(0,0,0,0.08);
+        }
+
+        .continuation h2 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #8b7a6a;
+            margin-bottom: 1rem;
+        }
+
+        .continuation p {
+            margin-bottom: 1.2rem;
+        }
+
+        .continuation p:last-child {
+            margin-bottom: 0;
+        }
+
+        .soft-link {
+            color: #7c5f4a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #d4c4b4;
+            transition: color 0.2s, text-decoration-color 0.2s;
+        }
+
+        .soft-link:hover {
+            color: #3a2c22;
+            text-decoration-color: #7c5f4a;
+        }
+
+        /* 特点列表 — 卡片式陈列 */
+        .feature-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-item {
+            background: #ffffff;
+            border: 1px solid #e7e3de;
+            border-radius: 24px;
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .feature-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .feature-icon {
+            font-size: 1.5rem;
+            line-height: 1;
+            min-width: 2.2rem;
+            color: #a28d7a;
+        }
+
+        .feature-content h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+            color: #2c2825;
+        }
+
+        .feature-content p {
+            font-size: 0.96rem;
+            color: #4b4642;
+            margin: 0;
+        }
+
+        /* 温和结尾 + 提示 */
+        .gentle-closing {
+            background: #f4f1ed;
+            border-radius: 28px;
+            padding: 2rem 2.2rem;
+            margin-top: 0.4rem;
+            border: 1px solid #e3dbd2;
+        }
+
+        .gentle-closing p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .gentle-closing p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tagline {
+            font-size: 0.85rem;
+            color: #7d7167;
+            margin-top: 2.8rem;
+            text-align: center;
+            border-top: 1px solid #e0d9d0;
+            padding-top: 2rem;
+            letter-spacing: 0.03em;
+        }
+
+        .tagline a,
+        .tagline .mention {
+            color: #5f4e3e;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #ccbfb2;
+        }
+
+        .tagline a:hover {
+            color: #2f241d;
+            text-decoration-color: #7c6a5b;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e2dbd2;
+            margin: 2.5rem 0 0.5rem;
+        }
+
+        @media (max-width: 550px) {
+            body {
+                padding: 1rem 0.75rem;
+            }
+            .page {
+                margin: 2rem auto;
+            }
+            .opening {
+                font-size: 1.1rem;
+                padding-left: 1rem;
+            }
+            .continuation {
+                padding: 1.4rem 1.2rem;
+            }
+            .feature-item {
+                padding: 1.2rem 1.2rem;
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+            .feature-icon {
+                min-width: auto;
+            }
+            .gentle-closing {
+                padding: 1.5rem 1.2rem;
+            }
+        }
+
+        @media (min-width: 700px) {
+            .feature-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.2rem;
+            }
+            .feature-item {
+                flex-direction: column;
+                gap: 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- 开场短句 -->
+        <div class="opening">
+            <p>有些地方，去一次是偶然；回来看看，成了习惯。</p>
+        </div>
+
+        <!-- 承接段落 — 以收藏、再次访问为线索 -->
+        <div class="continuation">
+            <h2>再访 · 书签里的角落</h2>
+            <p>
+                浏览器书签栏里总有那么几个名字，不是每天都会打开，但偶尔想找点什么的时候，总会先滑过去。
+                对我而言，<a href="https://chn-site-hth.com" class="soft-link">hth</a> 就是其中一个。
+                从最初随手保存，到后来定期回来翻翻，不知不觉已经成了某种安静的参照。
+            </p>
+            <p>
+                收藏的本质或许不是占有，是给自己留一个「以后还会来」的出口。
+                那个链接一直在那里，不喧哗，不催促，像一本翻到折角的旧笔记。
+            </p>
+        </div>
+
+        <!-- 特点列表 — 四个特征 -->
+        <div class="feature-grid">
+            <div class="feature-item">
+                <div class="feature-icon">·</div>
+                <div class="feature-content">
+                    <h3>条目清晰</h3>
+                    <p>内容按主题归拢，没有多余装饰。想找什么，扫一眼就能定位。</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">·</div>
+                <div class="feature-content">
+                    <h3>稳定更新</h3>
+                    <p>隔段时间回来，总有新内容补充，但风格始终连贯，不会让人陌生。</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">·</div>
+                <div class="feature-content">
+                    <h3>不追热点</h3>
+                    <p>没有浮夸标题和跳转陷阱，像一本认真手写的索引，值得反复翻阅。</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">·</div>
+                <div class="feature-content">
+                    <h3>适合常驻</h3>
+                    <p>收藏夹里放得久了，反而成了默认的起点。不用刻意记，自然会想起。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 温和结尾 + 提示摘要 -->
+        <div class="gentle-closing">
+            <p>
+                如果你也曾偶然路过，或者刚刚发现这里，不妨先把它留在书签里。
+                不需要立刻看完所有内容，也不需要做什么决定。
+            </p>
+            <p>
+                以后某个下午，当你想找一个干净、不吵闹的地方时，那个叫 <a href="https://chn-site-hth.com" class="soft-link">hth</a> 的页面可能正好在那里。
+                它不会变来变去，也不会向你索取什么。
+            </p>
+            <p style="font-size:0.92rem; color:#6f645b; margin-top:1.2rem;">
+                —— 持续关注的意思是：你知道它一直在，而你可以随时回来。
+            </p>
+        </div>
+
+        <div class="tagline">
+            <span class="mention">hth</span> · 常访之所
+        </div>
+    </div>
+</body>
+</html>
