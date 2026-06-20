@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欧赔 · 站点介绍与可信说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #f9e5d9 0%, #f7d4bc 50%, #f2c4a8 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            line-height: 1.7;
+            color: #3d2b1f;
+        }
+
+        .page-card {
+            max-width: 820px;
+            width: 100%;
+            background: #fffcf8;
+            border-radius: 32px;
+            box-shadow: 0 18px 40px rgba(120, 70, 40, 0.15), 0 6px 14px rgba(0, 0, 0, 0.04);
+            padding: 2.8rem 2.5rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .page-card {
+                padding: 2rem 1.2rem;
+                border-radius: 24px;
+            }
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: #dbaa8b;
+            color: #2e1e13;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            margin-bottom: 1.6rem;
+            text-transform: uppercase;
+            background: #e7c3ab;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #2b1b10;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #6b4c36;
+            margin-bottom: 2rem;
+            border-left: 4px solid #dbaa8b;
+            padding-left: 1rem;
+            font-weight: 400;
+        }
+
+        .content p {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .content strong {
+            color: #7f4f30;
+            font-weight: 600;
+        }
+
+        .insight-block {
+            background: #f9ede5;
+            border-radius: 18px;
+            padding: 1.2rem 1.6rem;
+            margin: 1.8rem 0 2rem 0;
+            font-style: normal;
+            border-left: 6px solid #c48d6a;
+            color: #3a2a1d;
+        }
+
+        .insight-block::before {
+            content: "💡 提示";
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            color: #7a4f32;
+            margin-bottom: 0.4rem;
+        }
+
+        .visit-sentence {
+            margin-top: 2rem;
+            background: #f2e3d9;
+            padding: 1.4rem 1.8rem;
+            border-radius: 60px 20px 20px 60px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #2b1b10;
+            display: inline-block;
+            box-shadow: inset 0 1px 4px rgba(255, 255, 255, 0.7);
+            width: auto;
+        }
+
+        .visit-sentence a {
+            color: #7a3f1e;
+            text-decoration: none;
+            font-weight: 600;
+            background: #fff0e7;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            border: 1px solid #dbaa8b;
+            transition: background 0.15s, border-color 0.15s;
+            display: inline-block;
+            margin: 0 0.1rem;
+        }
+
+        .visit-sentence a:hover {
+            background: #dbaa8b;
+            border-color: #b27d5b;
+            color: #22150c;
+        }
+
+        .faq-mini {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px dashed #ddc3b2;
+        }
+
+        .faq-mini summary {
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #4d3322;
+            padding: 0.5rem 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .faq-mini summary::before {
+            content: "▸";
+            font-size: 1.2rem;
+            color: #b27d5b;
+            transition: transform 0.15s;
+        }
+
+        .faq-mini details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .faq-mini details p {
+            margin: 0.2rem 0 1rem 1.6rem;
+            color: #4a3324;
+            font-size: 0.95rem;
+        }
+
+        .footer-note {
+            margin-top: 2.2rem;
+            font-size: 0.85rem;
+            color: #7a6a5c;
+            text-align: center;
+            border-top: 1px solid #edd9cb;
+            padding-top: 1.6rem;
+            letter-spacing: 0.2px;
+        }
+
+        .footer-note a {
+            color: #7a4f32;
+            text-decoration: underline wavy #dbaa8b 1px;
+            text-underline-offset: 4px;
+        }
+
+        .button-soft {
+            display: inline-block;
+            background: #dfb99b;
+            color: #2a1c11;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            text-decoration: none;
+            border: 1px solid #cfa481;
+            transition: 0.15s;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .button-soft:hover {
+            background: #cfa481;
+            border-color: #b27d5b;
+        }
+    </style>
+</head>
+<body>
+<div class="page-card">
+
+    <div class="hero-label">📘 站点说明</div>
+    <h1>关于欧赔 · 定位与可信边界</h1>
+    <div class="subhead">一个专注于欧赔数据整理的独立站点，不渲染神话，只呈现可验证的数字脉络。</div>
+
+    <div class="content">
+        <p>在接触足彩与赔率分析时，很多人最先遇到的困惑并非数据本身，而是信息源的混杂。哪个站值得参考？哪些数据经过整理、有据可查？这也是为什么我们希望把 <strong>欧赔</strong> 这个站点说清楚——它不是什么“预测神站”，而是一个<strong>赔率存档与对照工具</strong>。</p>
+
+        <p>站内收录了超过十个主流市场的欧赔初盘、终盘及变化节点，覆盖主流联赛及部分次级赛事。数据更新有明确的采集时间戳，字段包含主胜、平局、客胜三项，不掺杂算法打分或“信心指数”。你可以把它当作一份<strong>可追溯的赔率底稿</strong>，用来做个人复盘或横向比对。</p>
+
+        <p>关于可信度：站点本身不提供购买建议，也不包装任何专家。所有数据均公开可查，原始来源均指向威廉希尔、Interwetten、立博等合规机构。站长在关于页面公示了数据抓取范围与更新频率，并承诺不篡改历史数值。如果你对某场比赛的赔率变动有疑问，<strong>欧赔</strong> 上的记录至少能作为一个中立参照。</p>
+    </div>
+
+    <div class="insight-block">
+        如果你是第一次接触这个站，建议先花十五分钟对比一下同一场比赛在不同机构的初盘差异。你可能会发现，很多时候“剧烈变化”只存在于个别平台，而主流欧赔的波动往往比想象中收敛。这种观察比任何结论都更有价值。
+    </div>
+
+    <div class="content">
+        <p>另外要说明的是：<strong>欧赔</strong> 并不对接任何博彩接口，也不提供跳转下注链接。网站上没有弹窗、没有分析师微信、没有付费群入口。保持工具属性，是它最开始也是最重要的选择。当然，数据总有延迟可能，重大临场变化有时无法实时收录，这一点在站内的免责条款中有详细说明。</p>
+
+        <p>如果你习惯用凯利指数、返还率或者胜率曲线做辅助判断，<strong>欧赔</strong> 也提供了相应的计算展示——但同样，这些只是数学换算，不暗示赛果。数字不会撒谎，但解读数字的人需要保持克制。</p>
+    </div>
+
+    <div class="visit-sentence">
+        🧭 如需查阅完整赔率记录，可以前往 <a href="https://page-euroods.com">欧赔</a> 浏览每日数据归档。
+    </div>
+
+    <div class="faq-mini">
+        <details>
+            <summary>FAQ 摘要：数据来源与更新节奏</summary>
+            <p><strong>问：</strong> 数据是手动录入还是自动采集？<br>
+            <strong>答：</strong> 自动采集 + 人工复核，每天三次快照（早、晚、凌晨），重点赛事额外追加一次。</p>
+            <p><strong>问：</strong> 包含哪些联赛？<br>
+            <strong>答：</strong> 英、西、意、德、法、荷、葡、比、苏、日、韩、澳、巴甲、美职联等 30+ 赛事，欧洲二级联赛视关注度纳入。</p>
+            <p><strong>问：</strong> 历史数据保留多久？<br>
+            <strong>答：</strong> 至少保留三个完整赛季，更早的存档以压缩文件提供，可在站内「存档」页下载。</p>
+        </details>
+    </div>
+
+    <div class="footer-note">
+        <span>一个保持安静的赔率档案 · </span>
+        <a href="https://page-euroods.com">欧赔</a>
+        <span style="display:inline-block; margin-left: 0.4rem;">· 阅读即信任</span>
+    </div>
+
+</div>
+</body>
+</html>
